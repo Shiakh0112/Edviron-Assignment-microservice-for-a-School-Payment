@@ -1,15 +1,16 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+export const API_BASE_URL =
+  "https://edviron-assignment-microservice-for-a-uk3w.onrender.com/api";
 
 export const PAYMENT_STATUS = {
-  SUCCESS: 'SUCCESS',
-  PENDING: 'PENDING',
-  FAILED: 'FAILED',
-  CANCELLED: 'CANCELLED',
+  SUCCESS: "SUCCESS",
+  PENDING: "PENDING",
+  FAILED: "FAILED",
+  CANCELLED: "CANCELLED",
 };
 
 export const PAYMENT_MODES = {
-  UPI: 'upi',
-  CARD: 'card',
-  NETBANKING: 'netbanking',
-  WALLET: 'wallet',
+  UPI: "upi",
+  CARD: "card",
+  NETBANKING: "netbanking",
+  WALLET: "wallet",
 };
