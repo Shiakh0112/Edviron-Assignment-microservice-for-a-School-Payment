@@ -18,10 +18,11 @@ app.use(
 app.use(express.json());
 app.use(morgan("dev"));
 
-// Routes
-app.get("/api/helth", (req, res) => {
-  req.send("hello");
+Routes;
+app.get("/api/health", (req, res) => {
+  res.json({ message: "Server is running fine" });
 });
+
 app.use("/api/auth", authRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/payments", paymentRoutes);
