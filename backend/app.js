@@ -18,7 +18,7 @@ app.use(
 app.use(express.json());
 app.use(morgan("dev"));
 
-Routes;
+// Routes
 app.get("/api/health", (req, res) => {
   res.json({ message: "Server is running fine" });
 });
