@@ -45,7 +45,7 @@ const Header = () => {
                 to={link.to}
                 className={`relative font-medium transition-colors duration-300 group ${
                   theme === "dark"
-                    ? "text-gray-300 hover:text-blue-400"
+                    ? "text-gray-800 hover:text-blue-400"
                     : "text-gray-700 hover:text-blue-600"
                 }`}
               >
