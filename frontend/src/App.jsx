@@ -1,7 +1,6 @@
 // src/App.js
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
-import { useEffect } from "react";
 import Header from "./components/Header";
 import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
@@ -14,14 +13,6 @@ import Home from "./pages/Home";
 
 function App() {
   const { isAuthenticated, loading } = useAuth();
-  const navigate = useNavigate();
-
-  // Yeh useEffect refresh hone par URL ko "/" par set karega
-  useEffect(() => {
-    if (window.location.pathname !== "/") {
-      navigate("/", { replace: true });
-    }
-  }, [navigate]);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -32,7 +23,7 @@ function App() {
       {isAuthenticated && <Header />}
       <main>
         <Routes>
-          {/* Home Page */}
+          {/* Home Page (only if not logged in) */}
           <Route
             path="/"
             element={!isAuthenticated ? <Home /> : <Navigate to="/dashboard" />}
@@ -82,7 +73,7 @@ function App() {
             }
           />
 
-          {/* Fallback */}
+          {/* Fallback Route */}
           <Route
             path="*"
             element={<Navigate to={isAuthenticated ? "/dashboard" : "/"} />}
