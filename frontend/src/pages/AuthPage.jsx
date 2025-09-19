@@ -78,15 +78,15 @@ const AuthPage = () => {
   }, [isLogin]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl w-full">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-4 px-3 sm:px-4">
+      <div className="w-full max-w-md sm:max-w-lg">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
           {/* Container */}
-          <div className="flex flex-col md:flex-row relative min-h-[600px]">
+          <div className="flex flex-col relative">
             {/* Banner */}
             <div
               ref={bannerRef}
-              className="w-full md:w-1/2 h-72 md:h-auto p-8 flex flex-col justify-between transition-transform duration-700 ease-in-out"
+              className="w-full h-48 sm:h-56 p-4 sm:p-6 flex flex-col justify-between transition-transform duration-700 ease-in-out"
               style={{
                 background: isLogin
                   ? "linear-gradient(to bottom right, #3b82f6, #6366f1)"
@@ -95,41 +95,41 @@ const AuthPage = () => {
             >
               {/* Logo + text */}
               <div>
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-xl md:text-2xl font-bold">
+                <div className="flex justify-center mb-3 sm:mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-lg sm:text-xl font-bold">
                     SP
                   </div>
                 </div>
                 <div
                   className={`text-white transition-opacity duration-500 ${
-                    isLogin ? "opacity-100" : "opacity-0 absolute md:relative"
+                    isLogin ? "opacity-100" : "opacity-0 absolute"
                   }`}
                 >
-                  <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                  <h2 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">
                     Welcome Back!
                   </h2>
-                  <p className="mb-4 opacity-90 text-sm md:text-base">
+                  <p className="mb-2 sm:mb-3 opacity-90 text-xs sm:text-sm">
                     Sign in to access your dashboard and manage your school
                     payments efficiently.
                   </p>
                 </div>
                 <div
                   className={`text-white transition-opacity duration-500 ${
-                    !isLogin ? "opacity-100" : "opacity-0 absolute md:relative"
+                    !isLogin ? "opacity-100" : "opacity-0 absolute"
                   }`}
                 >
-                  <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                  <h2 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">
                     Join Us Today!
                   </h2>
-                  <p className="mb-4 opacity-90 text-sm md:text-base">
+                  <p className="mb-2 sm:mb-3 opacity-90 text-xs sm:text-sm">
                     Create an account to streamline your school payment
                     management.
                   </p>
                 </div>
               </div>
 
-              <div className="hidden md:block text-center">
-                <p className="text-white/80 text-xs md:text-sm">
+              <div className="hidden sm:block text-center">
+                <p className="text-white/80 text-xs">
                   © {new Date().getFullYear()} School Payment Dashboard
                 </p>
               </div>
@@ -138,16 +138,16 @@ const AuthPage = () => {
             {/* Form */}
             <div
               ref={formRef}
-              className="w-full md:w-1/2 h-full p-6 md:p-12 overflow-y-auto transition-transform duration-700 ease-in-out"
+              className="w-full p-4 sm:p-6 transition-transform duration-700 ease-in-out"
             >
-              <div className="max-w-md mx-auto flex flex-col justify-center">
-                <div className="text-center mb-6">
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
+              <div className="max-w-md mx-auto">
+                <div className="text-center mb-4 sm:mb-6">
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white">
                     {isLogin
                       ? "Sign in to your account"
                       : "Create your account"}
                   </h2>
-                  <p className="mt-1 text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                  <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {isLogin
                       ? "Enter your credentials to access your account"
                       : "Join the School Payment Dashboard today"}
@@ -156,14 +156,14 @@ const AuthPage = () => {
 
                 {/* Form */}
                 <form
-                  className="space-y-4 md:space-y-6"
+                  className="space-y-3 sm:space-y-4"
                   onSubmit={handleSubmit}
                 >
                   {/* Email */}
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                     >
                       Email
                     </label>
@@ -174,7 +174,7 @@ const AuthPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 text-sm"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -183,7 +183,7 @@ const AuthPage = () => {
                   <div>
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                     >
                       Password
                     </label>
@@ -194,7 +194,7 @@ const AuthPage = () => {
                       required
                       value={formData.password}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 text-sm"
                       placeholder="••••••••"
                     />
                   </div>
@@ -204,7 +204,7 @@ const AuthPage = () => {
                     <div>
                       <label
                         htmlFor="confirmPassword"
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                       >
                         Confirm Password
                       </label>
@@ -215,7 +215,7 @@ const AuthPage = () => {
                         required
                         value={formData.confirmPassword}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="••••••••"
                       />
                     </div>
@@ -224,7 +224,7 @@ const AuthPage = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-2 md:py-3 rounded-lg text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 disabled:opacity-70"
+                    className="w-full py-2 sm:py-3 rounded-lg text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 disabled:opacity-70 text-sm sm:text-base"
                   >
                     {loading
                       ? isLogin
@@ -237,10 +237,10 @@ const AuthPage = () => {
                 </form>
 
                 {/* Toggle */}
-                <div className="mt-4 text-center">
+                <div className="mt-3 sm:mt-4 text-center">
                   <button
                     onClick={toggleAuthMode}
-                    className="text-sm font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
+                    className="text-xs sm:text-sm font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
                   >
                     {isLogin
                       ? "Don't have an account? Sign up"
