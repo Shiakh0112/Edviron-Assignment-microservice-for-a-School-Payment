@@ -1,5 +1,5 @@
 # 📚 School Payments & Dashboard Application
-# deploye :- https://edviron-assignment-microservice-payment.onrender.com/
+# deploye :- https://edviron-assignment-microservice-for-beta.vercel.app/
 
 A **MERN-based School Payment & Dashboard Application** with **secure JWT authentication**, **Payment Gateway Integration**, **Webhook support**, and a **modern React frontend**.  
 This project is divided into **two parts**:  
