@@ -9,13 +9,20 @@ const webhookRoutes = require("./routes/webhookRoutes");
 
 const app = express();
 
+const allowedOrigins = [
+  "https://edviron-assignment-microservice-for-beta.vercel.app",
+  "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
-    origin: [
-      "https://edviron-assignment-microservice-for-beta.vercel.app/",
-      "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
-    ],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow Postman / server-to-server
+      if (!allowedOrigins.includes(origin)) {
+        return callback(new Error("Not allowed by CORS"), false);
+      }
+      return callback(null, true);
+    },
     credentials: true,
   })
 );
