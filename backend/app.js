@@ -12,12 +12,14 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://edviron-assignment-microservice-payment.onrender.com/",
       "https://edviron-assignment-microservice-payment.onrender.com",
+      "https://edviron-assignment-microservice.onrender.com", // 👈 ye add karo
+      "https://edviron-assignment-microservice-for-a-uk3w.onrender.com", // 👈 backend service URL bhi (optional)
     ],
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(morgan("dev"));
 
