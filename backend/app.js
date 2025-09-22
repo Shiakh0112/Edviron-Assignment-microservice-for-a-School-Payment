@@ -13,8 +13,7 @@ app.use(
   cors({
     origin: "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
     origin: [
-      "https://edviron-assignment-microservice-payment.onrender.com",
-      "https://edviron-assignment-microservice.onrender.com", 
+      "https://edviron-microservice-for-a-school-p-nu.vercel.app/",
       "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
     ],
     credentials: true,
