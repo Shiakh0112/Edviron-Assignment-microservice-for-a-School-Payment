@@ -12,7 +12,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://edviron-assignment-microservice-payment.onrender.com/",
+      
       "https://edviron-assignment-microservice-payment.onrender.com",
     ],
     credentials: true,
