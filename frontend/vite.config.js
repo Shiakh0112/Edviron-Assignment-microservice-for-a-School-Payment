@@ -9,8 +9,8 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
-  // ⚡ ye sabse important hai refresh issue solve karne ke liye
   preview: {
     port: 5000,
   },
+  base: "./",
 });
