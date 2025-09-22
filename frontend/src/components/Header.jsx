@@ -34,10 +34,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav
-            className="hidden md:flex ml-8 space-x-8 
-               text-gray-700 hover:text-blue-600"
-          >
+          <nav className="hidden md:flex ml-8 space-x-8">
             {[
               { to: "/transactions", label: "Transactions" },
               { to: "/create-payment", label: "Create Payment" },
@@ -46,7 +43,11 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="relative font-medium transition-colors duration-300 group  text-gray-800 hover:text-blue-400"
+                className={`relative font-medium transition-colors duration-300 group ${
+                  theme === "dark"
+                    ? "text-gray-800 hover:text-blue-400"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
               >
                 {link.label}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
@@ -57,8 +58,9 @@ const Header = () => {
           {/* User + Actions */}
           <div className="flex items-center space-x-4">
             <span
-              className="hidden sm:block text-sm font-medium
-                 text-gray-800"
+              className={`hidden sm:block text-sm font-medium ${
+                theme === "dark" ? "text-gray-300" : "text-gray-600"
+              }`}
             >
               {user ? `Welcome, ${getUsername(user.email)}` : ""}
             </span>
@@ -137,7 +139,8 @@ const Header = () => {
           <div
             className={`fixed top-0 right-0 w-64 h-full z-50 transform transition-transform duration-500 ease-in-out shadow-xl ${
               menuOpen ? "translate-x-0" : "translate-x-full"
-            } bg-gray-900 text-gray-900 `}
+            }
+                bg-white text-gray-900`}
           >
             <div className="flex items-center justify-between p-4 border-b border-gray-300 dark:border-gray-700">
               <span className="font-bold text-lg">
