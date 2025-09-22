@@ -137,11 +137,7 @@ const Header = () => {
           <div
             className={`fixed top-0 right-0 w-64 h-full z-50 transform transition-transform duration-500 ease-in-out shadow-xl ${
               menuOpen ? "translate-x-0" : "translate-x-full"
-            } ${
-              theme === "dark"
-                ? "bg-gray-900 text-white"
-                : "bg-white text-gray-900"
-            }`}
+            } bg-gray-900 text-gray-900 `}
           >
             <div className="flex items-center justify-between p-4 border-b border-gray-300 dark:border-gray-700">
               <span className="font-bold text-lg">
