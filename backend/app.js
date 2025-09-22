@@ -9,16 +9,16 @@ const webhookRoutes = require("./routes/webhookRoutes");
 
 const app = express();
 
-  app.use(
-    cors({
-      origin: "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
-      origin: [
-        "https://edviron-assignment-microservice.onrender.com",
-        "https://edviron-assignment-microservice-for-a-uk3w.onrender.com", 
-      ],
-      credentials: true,
-    })
-  );
+app.use(
+  cors({
+    origin: "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
+    origin: [
+      "https://edviron-assignment-microservice-for-beta.vercel.app/",
+      "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(morgan("dev"));
