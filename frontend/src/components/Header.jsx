@@ -34,7 +34,10 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex ml-8 space-x-8">
+          <nav
+            className="hidden md:flex ml-8 space-x-8 
+               text-gray-700 hover:text-blue-600"
+          >
             {[
               { to: "/transactions", label: "Transactions" },
               { to: "/create-payment", label: "Create Payment" },
@@ -43,11 +46,7 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative font-medium transition-colors duration-300 group ${
-                  theme === "dark"
-                    ? "text-gray-800 hover:text-blue-400"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
+                className="relative font-medium transition-colors duration-300 group  text-gray-800 hover:text-blue-400"
               >
                 {link.label}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
@@ -58,9 +57,8 @@ const Header = () => {
           {/* User + Actions */}
           <div className="flex items-center space-x-4">
             <span
-              className={`hidden sm:block text-sm font-medium ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className="hidden sm:block text-sm font-medium
+                 text-gray-800"
             >
               {user ? `Welcome, ${getUsername(user.email)}` : ""}
             </span>
